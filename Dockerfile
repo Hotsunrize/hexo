@@ -20,12 +20,12 @@ ENV PATH "/app/web"
 WORKDIR ${PATH}
 
 #npm install
-RUN npm install hexo-cli -g && \
-    hexo init ${BLOG_URL} && \
+RUN /bin/npm install hexo-cli -g && \
+    /bin/hexo init ${BLOG_URL} && \
     cd ${BLOG_URL} && \
-    npm install && \
+    /bin/npm install && \
     cd ${BLOG_URL}/themes/ && \
-    git clone https://github.com/iissnan/hexo-theme-next.git && \
+    /bin/git clone https://github.com/iissnan/hexo-theme-next.git && \
     cd ..
 
 #volumes
